@@ -1,35 +1,35 @@
 ﻿using System;
 
-namespace lab1v1
+namespace lab1v5
 {
-    // Клас за варіантом 1: Book
-    public class Book
+    // Клас за варіантом 5: City
+    public class City
     {
         // Приватні поля
-        private string title;
-        private string author;
+        private string name;
+        private string country;
 
         // Публічна властивість
-        public int Year { get; set; }
+        public int Population { get; set; }
 
         // Конструктор для ініціалізації
-        public Book(string title, string author, int year)
+        public City(string name, string country, int population)
         {
-            this.title = title;
-            this.author = author;
-            Year = year;
+            this.name = name;
+            this.country = country;
+            Population = population;
         }
 
         // Деструктор
-        ~Book()
+        ~City()
         {
-            Console.WriteLine($"[Деструктор] Об'єкт книги \"{title}\" видалено.");
+            Console.WriteLine($"[Деструктор] Об'єкт міста \"{name}\" видалено.");
         }
 
         // Метод для отримання інформації
         public string GetInfo()
         {
-            return $"Книга: \"{title}\" | Автор: {author} | Рік: {Year}";
+            return $"Місто: {name} | Країна: {country} | Населення: {Population} осіб";
         }
     }
 
@@ -37,15 +37,15 @@ namespace lab1v1
     {
         static void Main(string[] args)
         {
-            // Створення 3 об'єктів класу Book
-            Book book1 = new Book("Кобзар", "Тарас Шевченко", 1840);
-            Book book2 = new Book("Тіні забутих предків", "Михайло Коцюбинський", 1911);
-            Book book3 = new Book("Місто", "Валеріан Підмогильний", 1928);
+            // Створення 3 об'єктів класу City
+            City city1 = new City("Київ", "Україна", 2950000);
+            City city2 = new City("Токіо", "Японія", 13960000);
+            City city3 = new City("Париж", "Франція", 2161000);
 
             // Виклик методу GetInfo та вивід у консоль
-            Console.WriteLine(book1.GetInfo());
-            Console.WriteLine(book2.GetInfo());
-            Console.WriteLine(book3.GetInfo());
+            Console.WriteLine(city1.GetInfo());
+            Console.WriteLine(city2.GetInfo());
+            Console.WriteLine(city3.GetInfo());
         }
     }
 }
